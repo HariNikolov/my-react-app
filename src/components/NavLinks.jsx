@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
+import * as ROUTES from "../constant/routes";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ export default function Links() {
   return (
     <Typography className={classes.root}>
       <Link
-        href="/"
+        href={ROUTES.HOME}
         underline="none"
         style={{ color: "#424242" }}
         className={classes.link}
@@ -28,7 +29,7 @@ export default function Links() {
         Home
       </Link>
       <Link
-        href="/catalog"
+        href={ROUTES.CATALOG}
         underline="none"
         style={{ color: "#424242" }}
         className={classes.link}
@@ -36,7 +37,7 @@ export default function Links() {
         Catalog
       </Link>
       <Link
-        href="/blog"
+        href={ROUTES.BLOG}
         underline="none"
         style={{ color: "#424242" }}
         className={classes.link}
@@ -44,7 +45,7 @@ export default function Links() {
         Blog
       </Link>
       <Link
-        href="/about"
+        href={ROUTES.ABOUT}
         underline="none"
         style={{ color: "#424242" }}
         className={classes.link}
@@ -52,7 +53,7 @@ export default function Links() {
         About
       </Link>
       <Link
-        href="/contact"
+        href={ROUTES.CONTACT}
         underline="none"
         style={{ color: "#424242" }}
         className={classes.link}

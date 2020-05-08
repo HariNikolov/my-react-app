@@ -1,0 +1,12 @@
+.paper {
+  margin-top: 7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar {
+  margin: 1em;
+}
+.form {
+  margin-top: 4em;
+}

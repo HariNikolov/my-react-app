@@ -8,8 +8,8 @@ import Register from "./Register";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CardMedia from "@material-ui/core/CardMedia";
 import cover from "../images/AdidasCover.jpg";
-import Login from "./Login"
-
+import Login from "./Login";
+import * as ROUTES from "../constant/routes";
 
 const Cover = () => {
   return (
@@ -40,9 +40,9 @@ export class Home extends Component {
         <React.Fragment>
           <NavigationBar />
           <Switch>
-            <Route path="/register" component={Register} exact />
-            <Route path="/login" component={Login} exact />
-            <Route path="/" component={Content} exact />
+            <Route path={ROUTES.REGISTER} component={Register} exact />
+            <Route path={ROUTES.LOGIN} component={Login} exact />
+            <Route path={ROUTES.HOME} component={Content} exact />
           </Switch>
           <Footer />
         </React.Fragment>

@@ -15,6 +15,7 @@ import Button from "@material-ui/core/Button";
 import Links from "./NavLinks.jsx";
 import "./nav-bar.css";
 import Link from "@material-ui/core/Link";
+import * as ROUTES from "../constant/routes";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -112,7 +113,7 @@ export default function NavigationBar() {
       onClose={handleMenuClose}
     >
       <Button
-        href="/login"
+        href={ROUTES.LOGIN}
         onClick={handleMenuClose}
         underline="none"
         component="button"
@@ -120,7 +121,7 @@ export default function NavigationBar() {
         Log in
       </Button>
       <Button
-        href="/register"
+        href={ROUTES.REGISTER}
         onClick={handleMenuClose}
         underline="none"
         component="button"
@@ -137,7 +138,7 @@ export default function NavigationBar() {
           <Toolbar>
             <Grid item xs={2}>
               <Typography className={classes.title} variant="h4" noWrap>
-                <Link href="/" style={{ color: "#424242" }}>
+                <Link href={ROUTES.HOME} style={{ color: "#424242" }}>
                   MiniShop
                 </Link>
               </Typography>
