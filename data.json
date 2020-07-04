@@ -1,0 +1,170 @@
+{
+  "mens": {
+    "categories": {
+      "clothes": {
+        "tshirts": [
+          {
+            "title": "Adidas Men T-Shirt",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://slimages.macysassets.com/is/image/MCY/products/5/optimized/9169785_fpx.tif?op_sharpen=1&wid=500&hei=613&fit=fit,1&$filtersm$",
+            "price": 54.99,
+            "color": ["red", "white", "blue", "black"]
+          },
+          {
+            "title": "Adidas Men T-Shirt",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://i.pinimg.com/564x/7a/70/e3/7a70e32eea2c61c497d1255debc096c9.jpg",
+            "price": 50.99,
+            "color": ["red", "white", "blue", "black"]
+          }
+        ],
+        "hoodies": [
+          {
+            "title": "Nike Men Hoodie",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://cdn.bike24.net/i/mb/b2/ef/c5/349995-00-d-747677.jpg",
+            "price": 110,
+            "color": ["red", "white", "blue", "black"]
+          }
+        ]
+      },
+      "shoes": [
+        {
+          "sneakers": [
+            {
+              "title": "Nike Air Max 270",
+              "size": [43, 44, 45],
+              "image": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F02%2Fnike-top-10-best-selling-sneakers-list-2019-01.jpg?q=90&w=1400&cbr=1&fit=max",
+              "price": 175,
+              "color": ["black", "white"]
+            }
+          ]
+        }
+      ],
+      "accessories": [
+        {
+          "bags": [
+            {
+              "title": "Nike Men Bag",
+              "image": "https://i4.cdn.hhv.de/catalog/shop_detail_zoom/00685/685719.jpg",
+              "price": 49.99,
+              "color": ["black", "white"]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "womens": {
+    "categories": {
+      "clothes": {
+        "tshirts": [
+          {
+            "title": "Adidas T-Shirt",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://media.sssports.com/630x630/media/catalog/product/4/0/4061619471359_1.jpg",
+            "price": 45.99,
+            "color": ["red", "white", "blue", "black"]
+          },
+          {
+            "title": "Adidas T-Shirt",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://cdn.ccs.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/1/9/192609856703-1.1546224574.jpg",
+            "price": 50.99,
+            "color": ["red", "white", "blue", "black"]
+          }
+        ],
+        "hoodies": [
+          {
+            "title": "Nike Hoodie",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://image.keller-sports.com/storage/products/4E/BC/4EBC37F0B7371805672D5A26EDFFD27EE3b0.600x600.jpeg",
+            "price": 99.99,
+            "color": ["red", "white", "blue", "black"]
+          }
+        ]
+      },
+      "shoes": [
+        {
+          "sneakers": [
+            {
+              "title": "Nike Air Max 270",
+              "size": [43, 44, 45],
+              "image": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F02%2Fnike-top-10-best-selling-sneakers-list-2019-01.jpg?q=90&w=1400&cbr=1&fit=max",
+              "price": 175,
+              "color": ["black", "white"]
+            }
+          ]
+        }
+      ],
+      "accessories": [
+        {
+          "bags": [
+            {
+              "title": "Nike",
+              "image": "https://www.e-tennis.com/media/catalog/product/cache/4/thumbnail/800x800/9df78eab33525d08d6e5fb8d27136e95/n/i/nike_legend_training_tote_women_s_bag-ba6013-664.jpg",
+              "price": 69.99,
+              "color": ["black", "white"]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "kids": { 
+    "categories": {
+      "clothes": {
+        "tshirts": [
+          {
+            "title": "Adidas T-Shirt",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://i.pinimg.com/originals/76/7e/9a/767e9acd7e7e50eec31b255f974b9f35.jpg",
+            "price": 42.99,
+            "color": ["red", "white", "blue", "black"]
+          },
+          {
+            "title": "Adidas T-Shirt",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://www.cosmossport.gr/714089/adidas-yg-tr-bd-kn-tee.jpg",
+            "price": 44.99,
+            "color": ["red", "white", "blue", "black"]
+          }
+        ],
+        "hoodies": [
+          {
+            "title": "Nike Hoodie",
+            "size": ["s", "m", "l", "xl"],
+            "image": "https://media.sssports.com/630x630/media/catalog/product/4/0/4061619514520_1.jpg",
+            "price": 80.99,
+            "color": ["red", "white", "blue", "black"]
+          }
+        ]
+      },
+      "shoes": [
+        {
+          "sneakers": [
+            {
+              "title": "Nike Air Max 270",
+              "size": [43, 44, 45],
+              "image": "https://www.picclickimg.com/d/l400/pict/174154607985_/New-Adidas-toddler-shoes-SUPERSTAR-360-I-S82711.jpg",
+              "price": 86.0,
+              "color": ["black", "white"]
+            }
+          ]
+        }
+      ],
+      "accessories": [
+        {
+          "bags": [
+            {
+              "title": "Nike",
+              "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto/wb2aanpavblota1t8l7k/tanjun-backpack-vqWKxS.jpg",
+              "price": 49.99,
+              "color": ["black", "white"]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

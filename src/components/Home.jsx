@@ -5,10 +5,12 @@ import Footer from "./Footer";
 import { Component } from "react";
 import ProductsOffers from "./ProductsOffers";
 import Register from "./Register";
+import Contacts from "./Contacts";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CardMedia from "@material-ui/core/CardMedia";
 import cover from "../images/AdidasCover.jpg";
 import Login from "./Login";
+import Catalog from "./Catalog";
 import * as ROUTES from "../constant/routes";
 
 const Cover = () => {
@@ -43,6 +45,8 @@ export class Home extends Component {
             <Route path={ROUTES.REGISTER} component={Register} exact />
             <Route path={ROUTES.LOGIN} component={Login} exact />
             <Route path={ROUTES.HOME} component={Content} exact />
+            <Route path={ROUTES.CONTACT} component={Contacts} exact />
+            <Route path={ROUTES.CATALOG} component={Catalog} exact />
           </Switch>
           <Footer />
         </React.Fragment>

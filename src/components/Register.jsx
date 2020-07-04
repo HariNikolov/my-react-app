@@ -7,12 +7,13 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import Link from "@material-ui/core/Link";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Component } from "react";
 import * as ROUTES from "../constant/routes";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { withFirebase } from "./Firebase";
 import { compose } from "recompose";
 
@@ -170,7 +171,7 @@ class RegisterForm extends Component {
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link href="/login" variant="body2">
+                <Link href={ROUTES.LOGIN} variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

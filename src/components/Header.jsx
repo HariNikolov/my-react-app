@@ -85,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
 export default function NavigationBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -93,12 +92,8 @@ export default function NavigationBar() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    handleMobileMenuClose();
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const menuId = "primary-search-account-menu";
@@ -110,22 +105,12 @@ export default function NavigationBar() {
       keepMounted
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
+      onClose={handleClose}
     >
-      <Button
-        href={ROUTES.LOGIN}
-        onClick={handleMenuClose}
-        underline="none"
-        component="button"
-      >
+      <Button href={ROUTES.LOGIN} onClick={handleClose} underline="none" component="button">
         Log in
       </Button>
-      <Button
-        href={ROUTES.REGISTER}
-        onClick={handleMenuClose}
-        underline="none"
-        component="button"
-      >
+      <Button href={ROUTES.REGISTER} onClick={handleClose} underline="none" component="button">
         Register
       </Button>
     </Menu>
