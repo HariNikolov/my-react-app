@@ -12,6 +12,7 @@ import cover from "../images/AdidasCover.jpg";
 import Login from "./Login";
 import Catalog from "./Catalog";
 import * as ROUTES from "../constant/routes";
+import ProductPage from "./ProductPage";
 
 const Cover = () => {
   return (
@@ -46,6 +47,7 @@ export class Home extends Component {
             <Route path={ROUTES.LOGIN} component={Login} exact />
             <Route path={ROUTES.HOME} component={Content} exact />
             <Route path={ROUTES.CONTACT} component={Contacts} exact />
+            <Route path={ROUTES.COLLECTIONS} component={ProductPage} exact />
             <Route path={ROUTES.CATALOG} component={Catalog} exact />
           </Switch>
           <Footer />

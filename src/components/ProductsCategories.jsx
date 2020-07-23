@@ -147,6 +147,7 @@ function ProductCategories(props) {
           <ButtonBase
             key={image.title}
             className={classes.imageWrapper}
+            href="a"
             style={{
               width: image.width,
             }}

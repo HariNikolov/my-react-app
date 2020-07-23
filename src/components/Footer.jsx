@@ -1,19 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { createMuiTheme } from "@material-ui/core/styles";
+import * as ROUTES from "../constant/routes";
 
 function Copyright() {
   return (
     <React.Fragment>
       {"© "}
-      <Link color="inherit" href="#home">
+      <Link color="inherit" to={ROUTES.HOME}>
         www.minishop.com
       </Link>{" "}
       {new Date().getFullYear()}
@@ -100,13 +101,19 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="">Men</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Men
+                </Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="">Women</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Women
+                </Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="">Kids</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Kids
+                </Link>
               </li>
             </ul>
           </Grid>
@@ -116,13 +123,19 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="">About</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  About
+                </Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="">News</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  News
+                </Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="">Gift Card</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Gift Card
+                </Link>
               </li>
             </ul>
           </Grid>
@@ -132,13 +145,19 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="">Shipping</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Shipping
+                </Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="">Returns</Link>
+                <Link to="" style={{ textDecorationLine: "none" }}>
+                  Returns
+                </Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="">Contact us</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Contact us
+                </Link>
               </li>
             </ul>
           </Grid>
@@ -148,7 +167,9 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="">Blog</Link>
+                <Link to="a" style={{ textDecorationLine: "none" }}>
+                  Blog
+                </Link>
               </li>
             </ul>
           </Grid>

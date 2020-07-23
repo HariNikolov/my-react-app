@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
-import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 import * as ROUTES from "../constant/routes";
 
 const useStyles = makeStyles((theme) => ({
@@ -12,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     marginRight: 130,
+    textDecorationLine: "none",
   },
 }));
 
@@ -19,47 +19,42 @@ export default function Links() {
   const classes = useStyles();
 
   return (
-    <Typography className={classes.root}>
+    <div className={classes.root}>
       <Link
-        href={ROUTES.HOME}
-        underline="none"
+        to={ROUTES.HOME}
         style={{ color: "#424242" }}
         className={classes.link}
       >
         Home
       </Link>
       <Link
-        href={ROUTES.CATALOG}
-        underline="none"
+        to={ROUTES.CATALOG}
         style={{ color: "#424242" }}
         className={classes.link}
       >
         Catalog
       </Link>
       <Link
-        href={ROUTES.BLOG}
-        underline="none"
+        to={ROUTES.BLOG}
         style={{ color: "#424242" }}
         className={classes.link}
       >
         Blog
       </Link>
       <Link
-        href={ROUTES.ABOUT}
-        underline="none"
+        to={ROUTES.ABOUT}
         style={{ color: "#424242" }}
         className={classes.link}
       >
         About
       </Link>
       <Link
-        href={ROUTES.CONTACT}
-        underline="none"
+        to={ROUTES.CONTACT}
         style={{ color: "#424242" }}
         className={classes.link}
       >
         Contact
       </Link>
-    </Typography>
+    </div>
   );
 }

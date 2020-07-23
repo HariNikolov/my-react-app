@@ -11,10 +11,10 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
 import Grid from "@material-ui/core/Grid";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import Button from "@material-ui/core/Button";
 import Links from "./NavLinks.jsx";
 import "./nav-bar.css";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+
 import * as ROUTES from "../constant/routes";
 
 const useStyles = makeStyles((theme) => ({
@@ -107,12 +107,20 @@ export default function NavigationBar() {
       open={isMenuOpen}
       onClose={handleClose}
     >
-      <Button href={ROUTES.LOGIN} onClick={handleClose} underline="none" component="button">
+      <Link
+        to={ROUTES.LOGIN}
+        style={{ textDecorationLine: "none", margin: 20}}
+        onClick={handleClose}
+      >
         Log in
-      </Button>
-      <Button href={ROUTES.REGISTER} onClick={handleClose} underline="none" component="button">
+      </Link>
+      <Link
+        to={ROUTES.REGISTER}
+        onClick={handleClose}
+        style={{ textDecorationLine: "none", margin: 20}}
+      >
         Register
-      </Button>
+      </Link>
     </Menu>
   );
 
@@ -123,7 +131,10 @@ export default function NavigationBar() {
           <Toolbar>
             <Grid item xs={2}>
               <Typography className={classes.title} variant="h4" noWrap>
-                <Link href={ROUTES.HOME} style={{ color: "#424242" }}>
+                <Link
+                  to={ROUTES.HOME}
+                  style={{ color: "#424242", textDecorationLine: "none" }}
+                >
                   MiniShop
                 </Link>
               </Typography>

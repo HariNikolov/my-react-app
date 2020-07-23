@@ -29,7 +29,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="/">
+      <Link color="inherit" to={ROUTES.HOME}>
         MiniShop
       </Link>{" "}
       {new Date().getFullYear()}
@@ -56,7 +56,7 @@ class RegisterForm extends Component {
   };
 
   onSubmit = (event) => {
-    const { username, email, passwordOne } = this.state;
+    const { email, passwordOne } = this.state;
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)

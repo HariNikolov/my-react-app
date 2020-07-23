@@ -6,6 +6,4 @@ export const CATALOG = "/catalog";
 export const BLOG = "/blog";
 export const ABOUT = "/about";
 export const CONTACT = "/contact";
-export const ACCOUNT = "/account";
-export const ADMIN = "/admin";
-export const PASSWORD_FORGET = "/pw-forget";
+export const COLLECTIONS = "/catalog/:type";
