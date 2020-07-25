@@ -6,4 +6,4 @@ export const CATALOG = "/catalog";
 export const BLOG = "/blog";
 export const ABOUT = "/about";
 export const CONTACT = "/contact";
-export const COLLECTIONS = "/catalog/:type";
+export const COLLECTIONS = "/collection";

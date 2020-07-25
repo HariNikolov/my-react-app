@@ -7,17 +7,19 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
-import "./product-cards.css";
 
 class CardForm extends Component {
   render() {
     return (
-      <Grid container className="cards">
-        <Card className="root" style={{ width: 345, margin: 10 }}>
+      <Grid className="cards">
+        <Card
+          className="root"
+          style={{ width: 270, margin: 30 }}
+        >
           <CardActionArea>
             <CardMedia
               className="media"
-              style={{ height: 350 }}
+              style={{ height: 300 }}
               image={this.props.image}
               title={this.props.title}
             />

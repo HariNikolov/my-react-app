@@ -15,24 +15,19 @@ const ProductsPage = () => (
 export class ProductPage extends React.Component {
   constructor(props) {
     super(props);
-
-    this.database = this.props.firebase.data();
     this.state = {
       products: [],
     };
   }
 
+  onProductsRecieved = (res) => {
+    this.setState({ products: res });
+  };
+
   componentDidMount() {
-    console.log(this.props);
-    console.log(queryString.parse(this.props.location.search));
-    return this.database.on("value", (snap) =>
-      this.setState({
-        products: snap
-          .val()
-          .filter((pr) => pr.gender === this.props.match.params.type
-          ),
-      })
-    );
+    const params = queryString.parse(this.props.location.search);
+
+    this.props.firebase.getProducts(params, this.onProductsRecieved);
   }
 
   render() {

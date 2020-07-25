@@ -1,7 +1,6 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-import "firebase/firestore";
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -34,7 +33,16 @@ class Firebase {
   doPasswordUpdate = (password) =>
     this.auth.currentUser.updatePassword(password);
 
-  data = () => this.db.ref("products")
+  data = () => this.db.ref("products");
+  getProducts = (params, callback) =>
+    this.data().on("value", (snap) => {
+      let products = snap
+        .val()
+        .filter((pr) => pr.gender === params.gender)
+        .filter((pr) => !params.category || pr.category === params.category);
+      console.log(products);
+      callback(products);
+    });
 }
 
 export default Firebase;
