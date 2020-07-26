@@ -14,7 +14,7 @@ class CardForm extends Component {
       <Grid className="cards">
         <Card
           className="root"
-          style={{ width: 270, margin: 30 }}
+          style={{ width: 270, margin: 20 }}
         >
           <CardActionArea>
             <CardMedia

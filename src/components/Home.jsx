@@ -13,6 +13,7 @@ import Login from "./Login";
 import Catalog from "./Catalog";
 import * as ROUTES from "../constant/routes";
 import ProductPage from "./ProductPage";
+import Blog from "./BlogPage";
 
 const Cover = () => {
   return (
@@ -36,6 +37,7 @@ const Content = () => {
   );
 };
 
+
 export class Home extends Component {
   render() {
     return (
@@ -49,6 +51,7 @@ export class Home extends Component {
             <Route path={ROUTES.CONTACT} component={Contacts} exact />
             <Route path={ROUTES.COLLECTIONS} component={ProductPage} exact />
             <Route path={ROUTES.CATALOG} component={Catalog} exact />
+            <Route path={ROUTES.BLOG} component={Blog} exact />
           </Switch>
           <Footer />
         </React.Fragment>
