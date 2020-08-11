@@ -34,7 +34,7 @@ class CardForm extends Component {
           </CardActionArea>
           <CardActions>
             <Button size="medium" color="primary">
-              Buy
+              Add to cart
             </Button>
           </CardActions>
         </Card>

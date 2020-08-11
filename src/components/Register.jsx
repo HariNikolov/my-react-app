@@ -16,12 +16,15 @@ import * as ROUTES from "../constant/routes";
 import { withRouter } from "react-router-dom";
 import { withFirebase } from "./Firebase";
 import { compose } from "recompose";
+import { FirebaseContext } from './Firebase';
 
 import "./register.css";
 
 const SignUpPage = () => (
   <div>
-    <SignUpForm />
+    <FirebaseContext.Consumer>
+      {(firebase) => <SignUpForm firebase={firebase} />}
+    </FirebaseContext.Consumer>
   </div>
 );
 
@@ -63,6 +66,7 @@ class RegisterForm extends Component {
       .then((authUser) => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
+        console.log(authUser);
       })
       .catch((error) => {
         this.setState({ error });

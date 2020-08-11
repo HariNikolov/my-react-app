@@ -92,7 +92,7 @@ const blogContent = [
 
 const Blog = () => {
   return (
-    <div className="container">
+    <div className="component">
       <div id="blogLayout">
         <div className="block" id="block1">
           <div className="img-wrapper">

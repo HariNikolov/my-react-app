@@ -14,8 +14,9 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import Links from "./NavLinks.jsx";
 import "./nav-bar.css";
 import { Link } from "react-router-dom";
-
+import SignOutButton from "./LogoutButton";
 import * as ROUTES from "../constant/routes";
+import { withFirebase } from "./Firebase/index.js";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -81,8 +82,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-export default function NavigationBar() {
+const NavigationBar = ({ firebase }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -96,6 +96,28 @@ export default function NavigationBar() {
     setAnchorEl(null);
   };
 
+  const nonAuth = (
+    <div>
+      <Link
+        to={ROUTES.LOGIN}
+        style={{
+          textDecorationLine: "none",
+          margin: 20,
+        }}
+        onClick={handleClose}
+      >
+        Log in
+      </Link>
+      <Link
+        to={ROUTES.REGISTER}
+        onClick={handleClose}
+        style={{ textDecorationLine: "none", margin: 20 }}
+      >
+        Register
+      </Link>
+    </div>
+  );
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -107,20 +129,7 @@ export default function NavigationBar() {
       open={isMenuOpen}
       onClose={handleClose}
     >
-      <Link
-        to={ROUTES.LOGIN}
-        style={{ textDecorationLine: "none", margin: 20}}
-        onClick={handleClose}
-      >
-        Log in
-      </Link>
-      <Link
-        to={ROUTES.REGISTER}
-        onClick={handleClose}
-        style={{ textDecorationLine: "none", margin: 20}}
-      >
-        Register
-      </Link>
+      {firebase.user() ? <SignOutButton /> : nonAuth}
     </Menu>
   );
 
@@ -157,10 +166,11 @@ export default function NavigationBar() {
             </div>
             <div className={classes.sectionDesktop}>
               <IconButton
-                aria-label="show 17 new notifications"
+                aria-label="show 8 new notifications"
                 color="inherit"
+                href={ROUTES.CHECKOUT}
               >
-                <Badge badgeContent={3} color="secondary">
+                <Badge badgeContent={1} color="secondary">
                   <AddShoppingCartIcon />
                 </Badge>
               </IconButton>
@@ -181,4 +191,5 @@ export default function NavigationBar() {
       {renderMenu}
     </div>
   );
-}
+};
+export default withFirebase(NavigationBar);

@@ -34,6 +34,8 @@ class Firebase {
   doPasswordUpdate = (password) =>
     this.auth.currentUser.updatePassword(password);
 
+  user = () => this.auth.currentUser;
+
   data = () => this.db.ref("products");
   getProducts = (params, callback) =>
     this.data().on("value", (snap) => {
@@ -41,7 +43,6 @@ class Firebase {
         .val()
         .filter((pr) => pr.gender === params.gender)
         .filter((pr) => !params.category || pr.category === params.category);
-      console.log(products);
       callback(products);
     });
 }

@@ -10,13 +10,13 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
 import { withFirebase } from "./Firebase";
 import * as ROUTES from "../constant/routes";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
 import { Component } from "react";
 import "./login.css";
+import { Container } from "@material-ui/core";
 
 function Copyright() {
   return (
@@ -51,19 +51,21 @@ class SignIn extends Component {
   }
 
   onSubmit = (event) => {
+    event.preventDefault();
     const { email, password } = this.state;
-
+  
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((res) => {
+        console.log(res);
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
       })
       .catch((error) => {
         this.setState({ error });
+        console.log(error);
       });
 
-    event.preventDefault();
   };
 
   onChange = (event) => {
@@ -72,7 +74,7 @@ class SignIn extends Component {
 
   render() {
     const { email, password, error } = this.state;
-    
+
     const isInvalid = password === "" || email === "";
     return (
       <Container component="main" maxWidth="xs">
@@ -84,7 +86,7 @@ class SignIn extends Component {
           <Typography component="h1" variant="h5">
             Log in
           </Typography>
-          <form className="form" noValidate>
+          <form className="form" onSubmit={this.onSubmit}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -134,11 +136,12 @@ class SignIn extends Component {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href={ROUTES.REGISTER} variant="body2">
+                <Link to={ROUTES.REGISTER} variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
+            {error && <p>{error.message}</p>}
           </form>
         </div>
         <Box mt={8}>
@@ -153,4 +156,4 @@ const SignInForm = compose(withRouter, withFirebase)(SignIn);
 
 export default SignInPage;
 
-export { SignIn };
+export { SignInForm };
