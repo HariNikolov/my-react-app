@@ -1,7 +1,7 @@
 import React from "react";
-import CardForm from "./ProductCards";
+import CardForm from "../ProductCards/ProductCards";
 import { compose } from "recompose";
-import { withFirebase } from "./Firebase";
+import { withFirebase } from "../Firebase";
 import { withRouter } from "react-router";
 import "./products-page.css";
 import queryString from "query-string";

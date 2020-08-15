@@ -12,10 +12,7 @@ class CardForm extends Component {
   render() {
     return (
       <Grid className="cards">
-        <Card
-          className="root"
-          style={{ width: 270, margin: 20 }}
-        >
+        <Card className="root" style={{ width: 270, margin: 20 }}>
           <CardActionArea>
             <CardMedia
               className="media"

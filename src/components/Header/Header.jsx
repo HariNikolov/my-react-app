@@ -11,12 +11,12 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import SearchIcon from "@material-ui/icons/Search";
 import Grid from "@material-ui/core/Grid";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import Links from "./NavLinks.jsx";
-import "./nav-bar.css";
+import Links from "../NavLinks/NavLinks";
+import "./header.css";
 import { Link } from "react-router-dom";
-import SignOutButton from "./LogoutButton";
-import * as ROUTES from "../constant/routes";
-import { withFirebase } from "./Firebase/index.js";
+import SignOutButton from "../LogOutButton/LogoutButton";
+import * as ROUTES from "../../constant/routes";
+import { withFirebase } from "../Firebase/index.js";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -165,15 +165,16 @@ const NavigationBar = ({ firebase }) => {
               />
             </div>
             <div className={classes.sectionDesktop}>
-              <IconButton
+              <Link
                 aria-label="show 8 new notifications"
                 color="inherit"
-                href={ROUTES.CHECKOUT}
+                to={ROUTES.ORDER}
+                style={{ marginTop: 10}}
               >
                 <Badge badgeContent={1} color="secondary">
                   <AddShoppingCartIcon />
                 </Badge>
-              </IconButton>
+              </Link>
               <IconButton
                 edge="end"
                 aria-label="account of current user"

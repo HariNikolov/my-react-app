@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import * as ROUTES from "../constant/routes";
+import * as ROUTES from "../../constant/routes";
 import { Link } from "react-router-dom";
 
 const styles = (theme) => ({
