@@ -129,7 +129,7 @@ const NavigationBar = ({ firebase }) => {
       open={isMenuOpen}
       onClose={handleClose}
     >
-      {firebase.user() ? <SignOutButton /> : nonAuth}
+      {firebase.currUser() ? <SignOutButton /> : nonAuth}
     </Menu>
   );
 

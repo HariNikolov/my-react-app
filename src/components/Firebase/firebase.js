@@ -34,7 +34,8 @@ class Firebase {
   doPasswordUpdate = (password) =>
     this.auth.currentUser.updatePassword(password);
 
-  user = () => this.auth.currentUser;
+  user = (user) => this.auth.onAuthStateChanged(user);
+  currUser = () => this.auth.currentUser;
 
   data = () => this.db.ref("products");
   getProducts = (params, callback) =>
