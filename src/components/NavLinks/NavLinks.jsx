@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
-import * as ROUTES from "../constant/routes";
+import * as ROUTES from "../../constant/routes";
 
 const useStyles = makeStyles((theme) => ({
   root: {

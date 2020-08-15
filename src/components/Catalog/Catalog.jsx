@@ -1,7 +1,7 @@
 import React from "react";
 import "./catalog.css";
 import { Link } from "react-router-dom";
-import * as ROUTES from "../constant/routes";
+import * as ROUTES from "../../constant/routes";
 
 export default function Catalog() {
   return (
