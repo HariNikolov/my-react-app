@@ -14,9 +14,9 @@ import * as ROUTES from "../../constant/routes";
 import ProductPage from "../ProductPage/ProductPage";
 import Blog from "../BlogPage/BlogPage";
 import CheckoutPage from "../Checkout/CheckoutPage";
-import Alert from "@material-ui/lab/Alert";
 import ShoppingCart from "../OrderPage/OrderPage";
-import { withFirebase } from "../Firebase";
+import { withFirebase } from "../Firebase/index.js";
+import AlertMsg from "../DialogMsg/DialogMsg";
 
 const Cover = () => {
   return (
@@ -42,34 +42,46 @@ const Content = () => {
 
 const isLoggedIn = (
   <Fragment>
-    <Route path={ROUTES.CONTACT} component={Contacts} exact />
-    <Route path={ROUTES.COLLECTIONS} component={ProductPage} exact />
-    <Route path={ROUTES.CATALOG} component={Catalog} exact />
-    <Route path={ROUTES.BLOG} component={Blog} exact />
-    <Route path={ROUTES.CHECKOUT} component={CheckoutPage} exact />
-    <Route path={ROUTES.ORDER} component={ShoppingCart} exact />
+    <Switch>
+      <Route path={ROUTES.REGISTER} component={Register} exact />
+      <Route path={ROUTES.LOGIN} component={Login} exact />
+      <Route path={ROUTES.HOME} component={Content} exact />
+      <Route path={ROUTES.CONTACT} component={Contacts} exact />
+      <Route path={ROUTES.COLLECTIONS} component={ProductPage} exact />
+      <Route path={ROUTES.CATALOG} component={Catalog} exact />
+      <Route path={ROUTES.BLOG} component={Blog} exact />
+      <Route path={ROUTES.CHECKOUT} component={CheckoutPage} exact />
+      <Route path={ROUTES.ORDER} component={ShoppingCart} exact />
+    </Switch>
   </Fragment>
 );
 
 const alertMsg = (
-  <Alert variant="outlined" severity="warning">
-    This is a warning alert — check it out!
-  </Alert>
+  <Fragment>
+    <Switch>
+      <Route path={ROUTES.REGISTER} component={Register} exact />
+      <Route path={ROUTES.LOGIN} component={Login} exact />
+      <Route path={ROUTES.HOME} component={Content} exact />
+      <Route path={ROUTES.CONTACT} component={AlertMsg} exact />
+      <Route path={ROUTES.COLLECTIONS} component={AlertMsg} exact />
+      <Route path={ROUTES.CATALOG} component={AlertMsg} exact />
+      <Route path={ROUTES.BLOG} component={AlertMsg} exact />
+      <Route path={ROUTES.CHECKOUT} component={AlertMsg} exact />
+      <Route path={ROUTES.ORDER} component={AlertMsg} exact />
+    </Switch>
+  </Fragment>
 );
 
-const Home = ({ firebase }) => (
-  <Router>
-    <React.Fragment>
-      <NavigationBar />
-      <Switch>
-        <Route path={ROUTES.REGISTER} component={Register} exact />
-        <Route path={ROUTES.LOGIN} component={Login} exact />
-        <Route path={ROUTES.HOME} component={Content} exact />
-      </Switch>
-      {firebase.currUser() ? isLoggedIn : alertMsg}
-      <Footer />
-    </React.Fragment>
-  </Router>
-);
+const Home = ({ authUser }) => {
+  return (
+    <Router>
+      <React.Fragment>
+        <NavigationBar />
+        {authUser ? isLoggedIn : alertMsg}
+        <Footer />
+      </React.Fragment>
+    </Router>
+  );
+};
 
 export default withFirebase(Home);

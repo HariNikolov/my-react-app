@@ -95,9 +95,10 @@ const NavigationBar = ({ firebase }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const user = firebase.currUser();
 
   const nonAuth = (
-    <div>
+    <div style={{ margin: "10px" }}>
       <Link
         to={ROUTES.LOGIN}
         style={{
@@ -129,7 +130,16 @@ const NavigationBar = ({ firebase }) => {
       open={isMenuOpen}
       onClose={handleClose}
     >
-      {firebase.currUser() ? <SignOutButton /> : nonAuth}
+      {user ? (
+        <div>
+          <div style={{ margin: "15px" }}>{user.email}</div>
+          <div style={{ marginLeft: "40px" }}>
+            <SignOutButton />
+          </div>
+        </div>
+      ) : (
+        nonAuth
+      )}
     </Menu>
   );
 
@@ -169,7 +179,7 @@ const NavigationBar = ({ firebase }) => {
                 aria-label="show 8 new notifications"
                 color="inherit"
                 to={ROUTES.ORDER}
-                style={{ marginTop: 10}}
+                style={{ marginTop: 10 }}
               >
                 <Badge badgeContent={1} color="secondary">
                   <AddShoppingCartIcon />
