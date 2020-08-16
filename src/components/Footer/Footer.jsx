@@ -101,18 +101,11 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
-                  Men
-                </Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
-                  Women
-                </Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
-                  Kids
+                <Link
+                  to={ROUTES.CATALOG}
+                  style={{ textDecorationLine: "none" }}
+                >
+                  Collection
                 </Link>
               </li>
             </ul>
@@ -123,18 +116,8 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
+                <Link to={ROUTES.ABOUT} style={{ textDecorationLine: "none" }}>
                   About
-                </Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
-                  News
-                </Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
-                  Gift Card
                 </Link>
               </li>
             </ul>
@@ -145,17 +128,10 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
-                  Shipping
-                </Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link to="" style={{ textDecorationLine: "none" }}>
-                  Returns
-                </Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
+                <Link
+                  to={ROUTES.CONTACT}
+                  style={{ textDecorationLine: "none" }}
+                >
                   Contact us
                 </Link>
               </li>
@@ -167,7 +143,7 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link to="a" style={{ textDecorationLine: "none" }}>
+                <Link to={ROUTES.BLOG} style={{ textDecorationLine: "none" }}>
                   Blog
                 </Link>
               </li>
