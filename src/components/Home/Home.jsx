@@ -14,8 +14,9 @@ import * as ROUTES from "../../constant/routes";
 import ProductPage from "../ProductPage/ProductPage";
 import Blog from "../BlogPage/BlogPage";
 import CheckoutPage from "../Checkout/CheckoutPage";
-import { withAuthentication } from "../Session";
+import Alert from "@material-ui/lab/Alert";
 import ShoppingCart from "../OrderPage/OrderPage";
+import { withFirebase } from "../Firebase";
 
 const Cover = () => {
   return (
@@ -39,7 +40,24 @@ const Content = () => {
   );
 };
 
-const Home = () => (
+const isLoggedIn = (
+  <Fragment>
+    <Route path={ROUTES.CONTACT} component={Contacts} exact />
+    <Route path={ROUTES.COLLECTIONS} component={ProductPage} exact />
+    <Route path={ROUTES.CATALOG} component={Catalog} exact />
+    <Route path={ROUTES.BLOG} component={Blog} exact />
+    <Route path={ROUTES.CHECKOUT} component={CheckoutPage} exact />
+    <Route path={ROUTES.ORDER} component={ShoppingCart} exact />
+  </Fragment>
+);
+
+const alertMsg = (
+  <Alert variant="outlined" severity="warning">
+    This is a warning alert — check it out!
+  </Alert>
+);
+
+const Home = ({ firebase }) => (
   <Router>
     <React.Fragment>
       <NavigationBar />
@@ -47,16 +65,11 @@ const Home = () => (
         <Route path={ROUTES.REGISTER} component={Register} exact />
         <Route path={ROUTES.LOGIN} component={Login} exact />
         <Route path={ROUTES.HOME} component={Content} exact />
-        <Route path={ROUTES.CONTACT} component={Contacts} exact />
-        <Route path={ROUTES.COLLECTIONS} component={ProductPage} exact />
-        <Route path={ROUTES.CATALOG} component={Catalog} exact />
-        <Route path={ROUTES.BLOG} component={Blog} exact />
-        <Route path={ROUTES.CHECKOUT} component={CheckoutPage} exact />
-        <Route path={ROUTES.ORDER} component={ShoppingCart} exact />
       </Switch>
+      {firebase.currUser() ? isLoggedIn : alertMsg}
       <Footer />
     </React.Fragment>
   </Router>
 );
 
-export default withAuthentication(Home);
+export default withFirebase(Home);

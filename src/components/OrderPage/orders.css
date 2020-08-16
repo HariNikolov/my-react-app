@@ -1,11 +1,13 @@
 .table {
-    margin-top: 200px;
-    margin-bottom: 150px;
-  }
-  .dltIcon {
-    margin-left: 550px;
-  }
-  .tRow {
-      text-align: center;
-  }
-  
+  margin-top: 200px;
+}
+.dltIcon {
+  margin-left: 550px;
+}
+.th {
+  text-align: right;
+}
+.cartRoot {
+  margin-bottom: 150px;
+  text-align: center;
+}
