@@ -1,5 +1,9 @@
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import Link from "@material-ui/core/Link";
+>>>>>>> 63a9747fa550b0f1c04bedb86316c9fe36f1fcf9
 =======
 import Link from "@material-ui/core/Link";
 >>>>>>> 63a9747fa550b0f1c04bedb86316c9fe36f1fcf9
@@ -7,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
+<<<<<<< HEAD
 <<<<<<< HEAD
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
@@ -103,6 +108,8 @@ export default function SpanningTable() {
   );
 }
 =======
+=======
+>>>>>>> 63a9747fa550b0f1c04bedb86316c9fe36f1fcf9
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
@@ -200,4 +207,7 @@ function Orders() {
 }
 
 export default Orders;
+<<<<<<< HEAD
+>>>>>>> 63a9747fa550b0f1c04bedb86316c9fe36f1fcf9
+=======
 >>>>>>> 63a9747fa550b0f1c04bedb86316c9fe36f1fcf9
