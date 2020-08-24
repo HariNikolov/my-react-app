@@ -15,7 +15,7 @@ import Links from "../NavLinks/NavLinks";
 import "./header.css";
 import { Link } from "react-router-dom";
 import SignOutButton from "../LogOutButton/LogoutButton";
-import * as ROUTES from "../../constant/routes";
+import * as ROUTES from "../../constants/routes";
 import { withFirebase } from "../Firebase/index.js";
 
 const useStyles = makeStyles((theme) => ({

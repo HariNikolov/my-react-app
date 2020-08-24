@@ -8,7 +8,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { createMuiTheme } from "@material-ui/core/styles";
-import * as ROUTES from "../../constant/routes";
+import * as ROUTES from "../../constants/routes";
 
 function Copyright() {
   return (

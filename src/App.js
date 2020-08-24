@@ -18,6 +18,7 @@ class App extends Component {
         : this.setState({ authUser: null });
     });
   }
+  
   componentWillUnmount() {
     this.listener();
   }

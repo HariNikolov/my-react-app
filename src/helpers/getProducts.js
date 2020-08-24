@@ -15,6 +15,4 @@ function database() {
   });
 }
 
-
-
-export default 
+export default withFirebase(database);

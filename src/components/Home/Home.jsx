@@ -10,7 +10,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import cover from "../../images/AdidasCover.jpg";
 import Login from "../Login/Login";
 import Catalog from "../Catalog/Catalog";
-import * as ROUTES from "../../constant/routes";
+import * as ROUTES from "../../constants/routes";
 import ProductPage from "../ProductPage/ProductPage";
 import Blog from "../BlogPage/BlogPage";
 import CheckoutPage from "../Checkout/CheckoutPage";

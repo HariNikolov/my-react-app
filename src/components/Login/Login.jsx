@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { withFirebase } from "../Firebase";
-import * as ROUTES from "../../constant/routes";
+import * as ROUTES from "../../constants/routes";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
 import { Component } from "react";

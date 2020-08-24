@@ -12,7 +12,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Component } from "react";
-import * as ROUTES from "../../constant/routes";
+import * as ROUTES from "../../constants/routes";
 import { withRouter } from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { compose } from "recompose";
