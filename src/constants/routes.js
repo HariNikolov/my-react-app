@@ -9,3 +9,5 @@ export const CONTACT = "/contact";
 export const COLLECTIONS = "/collection";
 export const CHECKOUT = "/shoppingcart/checkout";
 export const ORDER = "/order"
+export const PASSWORD_FORGET = "/passwordforget"
+

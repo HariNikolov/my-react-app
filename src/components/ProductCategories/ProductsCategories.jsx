@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
-import images from "../../contents/categoriesImages";
+import images from "../../content/categoriesImages";
 
 const styles = (theme) => ({
   root: {

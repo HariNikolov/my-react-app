@@ -4,7 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -128,12 +128,12 @@ class SignIn extends Component {
             {error && <p>{error.message}</p>}
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link to={ROUTES.PASSWORD_FORGET} variant="body2" className="li">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link to={ROUTES.REGISTER} variant="body2">
+                <Link to={ROUTES.REGISTER} variant="body2" className="li">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

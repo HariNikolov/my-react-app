@@ -16,8 +16,8 @@ import * as ROUTES from "../../constants/routes";
 import { withRouter } from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { compose } from "recompose";
-import { FirebaseContext } from '../Firebase';
-
+import { FirebaseContext } from "../Firebase";
+import isInvalid from "../../helpers/isInvalid";
 import "./register.css";
 
 const SignUpPage = () => (
@@ -77,11 +77,7 @@ class RegisterForm extends Component {
 
   render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
-    const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === "" ||
-      email === "" ||
-      username === "";
+
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -169,7 +165,7 @@ class RegisterForm extends Component {
               variant="contained"
               color="primary"
               className="submit"
-              disabled={isInvalid}
+              disabled={isInvalid(passwordOne, passwordTwo, email, username)}
             >
               Register
             </Button>
