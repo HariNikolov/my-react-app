@@ -1,0 +1,8 @@
+.root {
+  border-spacing: 2;
+}
+.link {
+  text-decoration-line: none;
+  margin-right: 130px;
+  color: #424242;
+}
