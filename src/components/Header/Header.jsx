@@ -181,7 +181,7 @@ const NavigationBar = ({ firebase }) => {
                 to={ROUTES.ORDER}
                 style={{ marginTop: 10 }}
               >
-                <Badge badgeContent={1} color="secondary">
+                <Badge badgeContent={3} color="secondary">
                   <AddShoppingCartIcon />
                 </Badge>
               </Link>

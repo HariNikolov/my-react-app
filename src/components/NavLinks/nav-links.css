@@ -1,7 +1,8 @@
 .root {
+  margin-left: 120px;
   border-spacing: 2;
 }
-.link {
+.navLink {
   text-decoration-line: none;
   margin-right: 130px;
   color: #424242;

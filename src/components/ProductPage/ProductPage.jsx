@@ -5,6 +5,7 @@ import { withFirebase } from "../Firebase";
 import { withRouter } from "react-router";
 import "./products-page.css";
 import queryString from "query-string";
+import Circular from "../Circular/Circular";
 
 const ProductsPage = () => (
   <div>
@@ -17,6 +18,7 @@ export class ProductPage extends React.Component {
     super(props);
     this.state = {
       products: [],
+      loading: false,
     };
   }
 
@@ -25,14 +27,24 @@ export class ProductPage extends React.Component {
   };
 
   componentDidMount() {
+    this.setState({ loading: true });
     const params = queryString.parse(this.props.location.search);
 
-    this.props.firebase.getProducts(params, this.onProductsRecieved);
+    const product = this.props.firebase.getProducts(
+      params,
+      this.onProductsRecieved
+    );
+    if (product) {
+      this.setState({ loading: false });
+    }
   }
 
   render() {
     return (
       <div className="products-container">
+        <div className="circular">
+          {this.state.loading ? <Circular /> : null}
+        </div>
         {this.state.products.map((product) => (
           <CardForm
             image={product.image}

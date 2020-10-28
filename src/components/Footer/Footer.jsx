@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Link from "../Link/Link";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -14,9 +14,11 @@ function Copyright() {
   return (
     <React.Fragment>
       {"© "}
-      <Link color="inherit" to={ROUTES.HOME}>
-        www.minishop.com
-      </Link>{" "}
+      <Link
+        color="inherit"
+        route={ROUTES.HOME}
+        title="www.minishop.com"
+      ></Link>{" "}
       {new Date().getFullYear()}
     </React.Fragment>
   );
@@ -56,17 +58,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginRight: theme.spacing(1),
   },
-  list: {
-    margin: 0,
-    listStyle: "none",
-    padding: 0,
-  },
-  listItem: {
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5),
-  },
-  links: {
-    textAlign: "start",
+  fLink: {
+    textDecorationLine: "none",
   },
 }));
 
@@ -99,55 +92,33 @@ export default function AppFooter() {
             <Typography variant="h6" marked="left" gutterBottom>
               Catalog
             </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link
-                  to={ROUTES.CATALOG}
-                  style={{ textDecorationLine: "none" }}
-                >
-                  Collection
-                </Link>
-              </li>
-            </ul>
+            <Link
+              route={ROUTES.CATALOG}
+              title="Collection"
+              cName={classes.fLink}
+            />
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" marked="left" gutterBottom>
               Info
             </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link to={ROUTES.ABOUT} style={{ textDecorationLine: "none" }}>
-                  About
-                </Link>
-              </li>
-            </ul>
+            <Link route={ROUTES.ABOUT} title="About" cName={classes.fLink} />
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" marked="left" gutterBottom>
               Help
             </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link
-                  to={ROUTES.CONTACT}
-                  style={{ textDecorationLine: "none" }}
-                >
-                  Contact us
-                </Link>
-              </li>
-            </ul>
+            <Link
+              route={ROUTES.CONTACT}
+              title="Contact us"
+              cName={classes.fLink}
+            />
           </Grid>
           <Grid item xs={6} sm={4} md={2}>
             <Typography variant="h6" marked="left" gutterBottom>
               Blog
             </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link to={ROUTES.BLOG} style={{ textDecorationLine: "none" }}>
-                  Blog
-                </Link>
-              </li>
-            </ul>
+            <Link route={ROUTES.BLOG} title="Blog" cName={classes.fLink} />
           </Grid>
         </Grid>
       </Container>

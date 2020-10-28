@@ -5,14 +5,14 @@ import * as ROUTES from "../../constants/routes";
 
 export default function Catalog() {
   return (
-    <div>
+    <div className="catalog">
       <Link
         id="men"
         to={`${ROUTES.COLLECTIONS}/?gender=men`}
         className="collections"
       >
         <img
-          src="https://www.shaahidamir.co.in/images/mens-banner.jpg"
+          src="https://image.etashee.com/images/category/men/men-banner.jpg"
           alt=""
         />
       </Link>

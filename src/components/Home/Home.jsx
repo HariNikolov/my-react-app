@@ -15,6 +15,7 @@ import Register from "../Register/Register";
 import HomeContent from "../../content/homeContent";
 import * as ROUTES from "../../constants/routes";
 import PasswordForgetPage from "../PasswordForgetPage/PasswordForgetPage";
+import Default from "../Default/Default";
 
 const AuthRoutes = (
   <Fragment>
@@ -44,6 +45,7 @@ const Home = ({ authUser }) => {
       <React.Fragment>
         <NavigationBar />
         <Switch>
+          <Route exact path="/" component={HomeContent} />
           <Route path={ROUTES.REGISTER} component={Register} exact />
           <Route path={ROUTES.LOGIN} component={Login} exact />
           <Route path={ROUTES.HOME} component={HomeContent} exact />
@@ -53,6 +55,7 @@ const Home = ({ authUser }) => {
             exact
           />
           {authUser ? AuthRoutes : NonAuthRoutes}
+          <Route component={Default} />
         </Switch>
         <Footer />
       </React.Fragment>

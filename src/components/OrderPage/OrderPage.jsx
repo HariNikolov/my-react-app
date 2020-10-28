@@ -59,7 +59,7 @@ export default function SpanningTable() {
               <TableCell align="right">Price</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Desc</TableCell>
+              <TableCell>Products</TableCell>
               <TableCell align="right">Qty.</TableCell>
               <TableCell align="right">Unit</TableCell>
               <TableCell align="right">Sum</TableCell>
@@ -83,7 +83,7 @@ export default function SpanningTable() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Tax</TableCell>
+              <TableCell>Shipping</TableCell>
               <TableCell align="right">{`${(TAX_RATE * 100).toFixed(
                 0
               )} %`}</TableCell>
