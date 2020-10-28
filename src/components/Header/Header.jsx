@@ -13,7 +13,8 @@ import Grid from "@material-ui/core/Grid";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Links from "../NavLinks/NavLinks";
 import "./header.css";
-import { Link } from "react-router-dom";
+import Link from "../Link/Link";
+
 import SignOutButton from "../LogOutButton/LogoutButton";
 import * as ROUTES from "../../constants/routes";
 import { withFirebase } from "../Firebase/index.js";
@@ -81,6 +82,17 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  lrLink: {
+    margin: 20,
+    textDecorationLine: "none",
+  },
+  logoLink: {
+    textDecorationLine: "none",
+    color: "#424242",
+  },
+  cartIcon: {
+    marginTop: 10,
+  },
 }));
 const NavigationBar = ({ firebase }) => {
   const classes = useStyles();
@@ -100,22 +112,18 @@ const NavigationBar = ({ firebase }) => {
   const nonAuth = (
     <div style={{ margin: "10px" }}>
       <Link
-        to={ROUTES.LOGIN}
-        style={{
-          textDecorationLine: "none",
-          margin: 20,
-        }}
+        route={ROUTES.LOGIN}
+        cName={classes.lrLink}
         onClick={handleClose}
-      >
-        Log in
-      </Link>
+        title="Log in"
+      />
+
       <Link
-        to={ROUTES.REGISTER}
+        route={ROUTES.REGISTER}
         onClick={handleClose}
-        style={{ textDecorationLine: "none", margin: 20 }}
-      >
-        Register
-      </Link>
+        title="Register"
+        cName={classes.lrLink}
+      />
     </div>
   );
 
@@ -151,11 +159,10 @@ const NavigationBar = ({ firebase }) => {
             <Grid item xs={2}>
               <Typography className={classes.title} variant="h4" noWrap>
                 <Link
-                  to={ROUTES.HOME}
-                  style={{ color: "#424242", textDecorationLine: "none" }}
-                >
-                  MiniShop
-                </Link>
+                  route={ROUTES.HOME}
+                  cName={classes.logoLink}
+                  title="MiniShop"
+                />
               </Typography>
             </Grid>
             <Grid item xs={7}>
@@ -178,13 +185,14 @@ const NavigationBar = ({ firebase }) => {
               <Link
                 aria-label="show 8 new notifications"
                 color="inherit"
-                to={ROUTES.ORDER}
-                style={{ marginTop: 10 }}
-              >
-                <Badge badgeContent={3} color="secondary">
-                  <AddShoppingCartIcon />
-                </Badge>
-              </Link>
+                route={ROUTES.ORDER}
+                cName={classes.cartIcon}
+                title={
+                  <Badge badgeContent={3} color="secondary">
+                    <AddShoppingCartIcon />
+                  </Badge>
+                }
+              />
               <IconButton
                 edge="end"
                 aria-label="account of current user"

@@ -1,12 +1,15 @@
 import React from "react";
-
 import { withFirebase } from "../Firebase";
-import { Link } from "react-router-dom";
+import Link from "../Link/Link";
+import "./logOutBtn.css";
 
 const SignOutButton = ({ firebase }) => (
-    <Link to="/home" onClick={firebase.doSignOut}>
-      Sign Out
-    </Link>
+  <Link
+    route="/home"
+    doSomething={firebase.doSignOut}
+    title="Sign Out"
+    cName="logOutBtn"
+  />
 );
 
 export default withFirebase(SignOutButton);
